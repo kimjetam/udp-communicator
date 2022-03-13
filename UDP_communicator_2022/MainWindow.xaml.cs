@@ -26,19 +26,19 @@ namespace UDP_communicator_2022
             InitializeComponent();
         }
 
-        private void btn1_Click(object sender, RoutedEventArgs e)
+        private async void btn1_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("PKS Client");
             PksClient pksClient = new PksClient("127.0.0.1", 8888);
-            pksClient.Connect();
+            await pksClient.ConnectAsync();
         }
 
-        private void btn2_Click(object sender, RoutedEventArgs e)
+        private async void btn2_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("PKS Server");
 
             PksListener pksListener = new PksListener();
-            pksListener.Listen(8888);
+            await pksListener.ListenAsync(8888);
         }
     }
 }

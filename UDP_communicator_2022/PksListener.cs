@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace UDP_communicator_2022
 {
@@ -13,7 +14,7 @@ namespace UDP_communicator_2022
         {
         }
 
-        public void Listen(int port)
+        public async Task ListenAsync(int port)
         {
             _udpServer = new UdpClient();
             IPEndPoint listenEndPoint = new IPEndPoint(IPAddress.Any, port);
@@ -23,8 +24,8 @@ namespace UDP_communicator_2022
             Console.WriteLine($"UDP server: listening on port [{port}]");
             while (true)
             {
-                var response = _udpServer.Receive(ref listenEndPoint);
-                var responseStr = Encoding.ASCII.GetString(response);
+                var response = await _udpServer.ReceiveAsync();
+                var responseStr = Encoding.ASCII.GetString(response.Buffer);
                 Console.WriteLine($"UDP server: message received [{responseStr}]");
             }
 

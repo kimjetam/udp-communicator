@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="700">
     <Grid>
-        <Button Content="Btn1" HorizontalAlignment="Left" Margin="28,28,0,0" VerticalAlignment="Top" Click="btn1_Click"/>
-        <Button Content="Btn2" HorizontalAlignment="Left" Margin="80,28,0,0" VerticalAlignment="Top" Click="btn2_Click"/>
+        <Button Content="Send" HorizontalAlignment="Left" Margin="28,28,0,0" VerticalAlignment="Top" Click="btn1_Click" Width="86"/>
+        <Button Content="Listen" HorizontalAlignment="Left" Margin="153,28,0,0" VerticalAlignment="Top" Click="btn2_Click" Width="100"/>
         <TextBox HorizontalAlignment="Left" Margin="28,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" AcceptsReturn="True" Width="546" Height="208"/>
 
 

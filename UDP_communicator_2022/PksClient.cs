@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 
 namespace UDP_communicator_2022
 {
@@ -15,7 +16,7 @@ namespace UDP_communicator_2022
             _ipEndPoint = new IPEndPoint(IPAddress.Parse(ipAddress), port);
         }
 
-        public void Connect()
+        public async Task ConnectAsync()
         {
             _udpClient = new UdpClient();
             _udpClient.Connect(_ipEndPoint);
